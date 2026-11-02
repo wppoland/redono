@@ -251,6 +251,26 @@ final class Settings implements HasHooks
                                     <?php endif; ?>
                                 </td>
                             </tr>
+                            <tr>
+                                <th scope="row"><?php esc_html_e('Sizavo (Size Guides)', 'redono'); ?></th>
+                                <td>
+                                    <?php if (class_exists('\\Sizer\\Plugin')) : ?>
+                                        <p class="description" style="color:#007017;font-weight:600;">
+                                            <?php esc_html_e('Sizavo is active. Clear size guides help customers choose the right size and prevent returns before they happen.', 'redono'); ?>
+                                        </p>
+                                    <?php else : ?>
+                                        <p class="description">
+                                            <?php
+                                            printf(
+                                                /* translators: %s: partner plugin name, linked to its search on the Add Plugins screen. */
+                                                esc_html__('Install %s to reduce return rates by displaying interactive size charts and measurement guides on product pages.', 'redono'),
+                                                '<a href="' . esc_url(admin_url('plugin-install.php?s=' . rawurlencode('Sizavo - Size Guide for WooCommerce') . '&tab=search&type=term')) . '">' . esc_html('Sizavo - Size Guide for WooCommerce') . '</a>'
+                                            );
+                                            ?>
+                                        </p>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
