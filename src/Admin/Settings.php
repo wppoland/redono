@@ -231,6 +231,26 @@ final class Settings implements HasHooks
                                     <?php endif; ?>
                                 </td>
                             </tr>
+                            <tr>
+                                <th scope="row"><?php esc_html_e('Shoplex (EU Compliance)', 'redono'); ?></th>
+                                <td>
+                                    <?php if (defined('\\Shoplex\\VERSION') || class_exists('\\Shoplex\\Plugin')) : ?>
+                                        <p class="description" style="color:#007017;font-weight:600;">
+                                            <?php esc_html_e('Shoplex is active. Comprehensive EU Consumer Rights, Omnibus price tracking, and legal compliance notices are active across your store.', 'redono'); ?>
+                                        </p>
+                                    <?php else : ?>
+                                        <p class="description">
+                                            <?php
+                                            printf(
+                                                /* translators: %s: partner plugin name, linked to its search on the Add Plugins screen. */
+                                                esc_html__('Install %s to ensure full storewide compliance with the EU Consumer Rights Directive, Omnibus pricing, and VAT display rules.', 'redono'),
+                                                '<a href="' . esc_url(admin_url('plugin-install.php?s=' . rawurlencode('Shoplex - EU Compliance for WooCommerce') . '&tab=search&type=term')) . '">' . esc_html('Shoplex - EU Compliance for WooCommerce') . '</a>'
+                                            );
+                                            ?>
+                                        </p>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
