@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Returns - RMA and Return Requests for WooCommerce 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/redono\n"
-"POT-Creation-Date: 2026-10-29T13:42:47+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/returns\n"
+"POT-Creation-Date: 2026-11-08T15:15:53+00:00\n"
 "PO-Revision-Date: 2026-06-15 00:00+0000\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -209,8 +209,10 @@ msgstr ""
 msgid ""
 "Applies to Complaint and Repair requests, counted from the order date. A "
 "fault can surface long after the return window has closed, and in the EU the "
-"legal guarantee runs for at least two years, so this window is separate. Set "
-"0 for no deadline. Ships at 24."
+"legal guarantee runs for at least two years, so this window is separate. "
+"Once a repair request on an order is completed, that order gets 12 more "
+"months, once, because repair extends the liability of the seller (Article "
+"10(2a) of Directive (EU) 2019/771). Set 0 for no deadline. Ships at 24."
 msgstr ""
 
 #. translators: %s is the date the complaint and repair window closes.
@@ -243,107 +245,143 @@ msgid ""
 "flow."
 msgstr ""
 
+#: src/Admin/Settings.php:235
+msgid "Shoplex (EU Compliance)"
+msgstr ""
+
+#: src/Admin/Settings.php:239
+msgid ""
+"Shoplex is active. Comprehensive EU Consumer Rights, Omnibus price tracking, "
+"and legal compliance notices are active across your store."
+msgstr ""
+
+#. translators: %s: partner plugin name, linked to its search on the Add Plugins screen.
+#: src/Admin/Settings.php:246
+#, php-format
+msgid ""
+"Install %s to ensure full storewide compliance with the EU Consumer Rights "
+"Directive, Omnibus pricing, and VAT display rules."
+msgstr ""
+
+#: src/Admin/Settings.php:255
+msgid "Sizavo (Size Guides)"
+msgstr ""
+
 #: src/Admin/Settings.php:259
+msgid ""
+"Sizavo is active. Clear size guides help customers choose the right size and "
+"prevent returns before they happen."
+msgstr ""
+
+#. translators: %s: partner plugin name, linked to its search on the Add Plugins screen.
+#: src/Admin/Settings.php:266
+#, php-format
+msgid ""
+"Install %s to reduce return rates by displaying interactive size charts and "
+"measurement guides on product pages."
+msgstr ""
+
+#: src/Admin/Settings.php:299
 msgid "any time later, no deadline"
 msgstr "w dowolnym momencie, bez terminu"
 
-#: src/Admin/Settings.php:284
+#: src/Admin/Settings.php:324
 msgid "Processing"
 msgstr "W trakcie realizacji"
 
-#: src/Admin/Settings.php:285 src/Support/Statuses.php:32
+#: src/Admin/Settings.php:325 src/Support/Statuses.php:32
 msgid "Completed"
 msgstr "Zakończone"
 
-#: src/PostType/ReturnRequest.php:68 src/PostType/ReturnRequest.php:70
-#: src/PostType/ReturnRequest.php:71
+#: src/PostType/ReturnRequest.php:71 src/PostType/ReturnRequest.php:73
+#: src/PostType/ReturnRequest.php:74
 msgid "Return Requests"
 msgstr "Zgłoszenia zwrotów"
 
-#: src/PostType/ReturnRequest.php:69 src/PostType/ReturnRequest.php:72
-#: src/PostType/ReturnRequest.php:73
+#: src/PostType/ReturnRequest.php:72 src/PostType/ReturnRequest.php:75
+#: src/PostType/ReturnRequest.php:76
 msgid "Return Request"
 msgstr "Zgłoszenie zwrotu"
 
-#: src/PostType/ReturnRequest.php:74
+#: src/PostType/ReturnRequest.php:77
 msgid "Search return requests"
 msgstr "Szukaj zgłoszeń zwrotów"
 
-#: src/PostType/ReturnRequest.php:75
+#: src/PostType/ReturnRequest.php:78
 msgid "No return requests found."
 msgstr "Nie znaleziono żadnych zgłoszeń zwrotów."
 
-#: src/PostType/ReturnRequest.php:76
+#: src/PostType/ReturnRequest.php:79
 msgid "No return requests in Trash."
 msgstr "Brak zgłoszeń zwrotów w koszu."
 
 #. translators: 1: request type label, 2: order number, 3: human-readable date
-#: src/PostType/ReturnRequest.php:134
+#: src/PostType/ReturnRequest.php:137
 #, php-format
 msgid "%1$s for order #%2$s, %3$s"
 msgstr "%1$s do zamówienia #%2$s, %3$s"
 
-#: src/PostType/ReturnRequest.php:307 src/PostType/ReturnRequest.php:392
+#: src/PostType/ReturnRequest.php:330 src/PostType/ReturnRequest.php:415
 #: src/Service/MyReturns.php:70 src/Service/MyReturns.php:91
 msgid "Order"
 msgstr "Zamówienie"
 
-#: src/PostType/ReturnRequest.php:308 src/PostType/ReturnRequest.php:402
+#: src/PostType/ReturnRequest.php:331 src/PostType/ReturnRequest.php:425
 #: src/Service/MyReturns.php:69 src/Service/MyReturns.php:85
 #: src/Service/ReturnPrivacyService.php:86
 msgid "Type"
 msgstr "Rodzaj"
 
-#: src/PostType/ReturnRequest.php:309 src/PostType/ReturnRequest.php:370
+#: src/PostType/ReturnRequest.php:332 src/PostType/ReturnRequest.php:393
 #: src/Service/MyReturns.php:72 src/Service/MyReturns.php:93
 #: src/Service/ReturnPrivacyService.php:89
 msgid "Status"
 msgstr "Status"
 
-#: src/PostType/ReturnRequest.php:310
+#: src/PostType/ReturnRequest.php:333
 msgid "Items"
 msgstr "Produkty"
 
-#: src/PostType/ReturnRequest.php:361
+#: src/PostType/ReturnRequest.php:384
 msgid "Return details"
 msgstr "Szczegóły zwrotu"
 
-#: src/PostType/ReturnRequest.php:411 src/Service/ReturnRequestForm.php:673
+#: src/PostType/ReturnRequest.php:434 src/Service/ReturnRequestForm.php:673
 msgid "Preferred remedy"
 msgstr "Preferowane rozwiązanie"
 
-#: src/PostType/ReturnRequest.php:416 src/Service/ReturnPrivacyService.php:87
+#: src/PostType/ReturnRequest.php:439 src/Service/ReturnPrivacyService.php:87
 #: src/Service/ReturnRequestForm.php:652
 msgid "Reason"
 msgstr "Powód"
 
-#: src/PostType/ReturnRequest.php:420
+#: src/PostType/ReturnRequest.php:443
 msgid "Customer note"
 msgstr "Notatka klienta"
 
-#: src/PostType/ReturnRequest.php:426
+#: src/PostType/ReturnRequest.php:449
 msgid "Requested items"
 msgstr "Zgłoszone produkty"
 
-#: src/PostType/ReturnRequest.php:428
+#: src/PostType/ReturnRequest.php:451
 msgid "No items recorded."
 msgstr "Nie zapisano żadnych produktów."
 
-#: src/PostType/ReturnRequest.php:433 src/Service/ReturnRequestForm.php:613
+#: src/PostType/ReturnRequest.php:456 src/Service/ReturnRequestForm.php:613
 #: src/Service/ReturnRequestForm.php:630
 msgid "Product"
 msgstr "Produkt"
 
-#: src/PostType/ReturnRequest.php:434 src/Service/ReturnRequestForm.php:614
+#: src/PostType/ReturnRequest.php:457 src/Service/ReturnRequestForm.php:614
 #: src/Service/ReturnRequestForm.php:635
 msgid "Quantity"
 msgstr "Ilość"
 
-#: src/PostType/ReturnRequest.php:459
+#: src/PostType/ReturnRequest.php:482
 msgid "Return status"
 msgstr "Status zwrotu"
 
-#: src/PostType/ReturnRequest.php:469
+#: src/PostType/ReturnRequest.php:492
 msgid ""
 "The customer sees this status in their account. Updating it here does not "
 "refund the order, process any refund in the order screen."
@@ -351,11 +389,11 @@ msgstr ""
 "Klient widzi ten status na swoim koncie. Zmiana statusu tutaj nie powoduje "
 "zwrotu pieniędzy, wszelkie zwroty realizuj na ekranie zamówienia."
 
-#: src/PostType/ReturnRequest.php:538
+#: src/PostType/ReturnRequest.php:562
 msgid "Filter by type"
 msgstr "Filtruj według rodzaju"
 
-#: src/PostType/ReturnRequest.php:540
+#: src/PostType/ReturnRequest.php:564
 msgid "All types"
 msgstr "Wszystkie rodzaje"
 
