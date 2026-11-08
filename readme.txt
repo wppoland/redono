@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.3.9
+Stable tag: 1.3.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -173,6 +173,9 @@ Redono connects to no external services. It sends no data off your site and load
 Redono is fully translatable and ships the `redono.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.3.10 =
+* Settings: the Shoplex recommendation no longer promises storewide compliance; it names the modules Shoplex adds.
 
 = 1.3.9 =
 * Added: once a Repair request, or a Complaint asking for repair, is marked Completed, the order's complaint and repair window gains 12 months, once. Directive (EU) 2024/1799 added Article 10(2a) to Directive (EU) 2019/771: where repair is the remedy, the liability period is extended once by 12 months. A replacement or a refund does not extend it.
