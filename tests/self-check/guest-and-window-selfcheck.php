@@ -60,6 +60,10 @@ namespace Returns\Tests {
     assert(Options::windowOpen($created, $created + 31 * $day, 'complaint'));
     assert(Options::windowOpen($created, (int) strtotime('2028-01-15 12:00:00 UTC'), 'repair'));
     assert(! Options::windowOpen($created, (int) strtotime('2028-01-15 12:00:01 UTC'), 'complaint'));
+    // Repair as the remedy extends the months window once by 12 (Art. 10(2a) of Directive (EU) 2019/771).
+    assert(Options::windowOpen($created, (int) strtotime('2029-01-15 12:00:00 UTC'), 'complaint', true));
+    assert(! Options::windowOpen($created, (int) strtotime('2029-01-15 12:00:01 UTC'), 'complaint', true));
+    assert(! Options::windowOpen($created, $created + 31 * $day, 'return', true));
 
     // Window: saved values are read, 0 means no limit.
     $GLOBALS['opt']['returns_settings'] = ['window_days' => 0, 'complaint_window_months' => 6];

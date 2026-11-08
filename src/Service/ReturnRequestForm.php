@@ -830,10 +830,11 @@ final class ReturnRequestForm implements HasHooks
             return true;
         }
 
-        $types = null === $type ? array_keys(Types::all()) : [$type];
+        $types    = null === $type ? array_keys(Types::all()) : [$type];
+        $repaired = 'yes' === $order->get_meta(ReturnRequest::META_ORDER_REPAIRED);
 
         foreach ($types as $candidate) {
-            if (Options::windowOpen($created->getTimestamp(), time(), (string) $candidate)) {
+            if (Options::windowOpen($created->getTimestamp(), time(), (string) $candidate, $repaired)) {
                 return true;
             }
         }

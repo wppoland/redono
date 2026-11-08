@@ -67,11 +67,15 @@ final class Options
      * Whether a request of the given type may still be filed for an order
      * created at $created. Complaint and repair (the types with a remedy) use
      * the months window, every other type the days window. 0 means no limit.
+     * $repaired adds 12 months to the months window once: repair as the remedy extends the
+     * seller's liability period (Article 10(2a) of Directive (EU) 2019/771, inserted by
+     * Article 16(2)(a) of Directive (EU) 2024/1799), as transposed nationally.
      */
-    public static function windowOpen(int $created, int $now, string $type): bool
+    public static function windowOpen(int $created, int $now, string $type, bool $repaired = false): bool
     {
         if (Types::hasRemedy($type)) {
             $months = self::complaintWindowMonths();
+            $months += 0 !== $months && $repaired ? 12 : 0;
 
             if (0 === $months) {
                 return true;

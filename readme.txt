@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,7 +103,11 @@ Yes. WooCommerce must be installed and active.
 Orders in the statuses you choose under WooCommerce > Redono (Completed and
 Processing by default). A Return must be filed within the return window in days
 (30 by default); a Complaint or Repair within the complaint and repair window in
-months (24 by default). Set either window to 0 to remove that time limit.
+months (24 by default). Once a repair request on an order is completed, that
+order's complaint and repair window gains 12 months, once: repair as the remedy
+extends the seller's liability period under Article 10(2a) of Directive (EU)
+2019/771, as transposed in each Member State. Set either window to 0 to remove
+that time limit.
 
 = Does it issue refunds automatically? =
 
@@ -169,6 +173,9 @@ Redono connects to no external services. It sends no data off your site and load
 Redono is fully translatable and ships the `redono.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.3.9 =
+* Added: once a Repair request, or a Complaint asking for repair, is marked Completed, the order's complaint and repair window gains 12 months, once. Directive (EU) 2024/1799 added Article 10(2a) to Directive (EU) 2019/771: where repair is the remedy, the liability period is extended once by 12 months. A replacement or a refund does not extend it.
 
 = 1.3.8 =
 * Fixed: deleting the plugin on a multisite network now removes its settings from every site, not only the main one.
