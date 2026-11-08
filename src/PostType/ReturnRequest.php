@@ -35,6 +35,9 @@ final class ReturnRequest implements HasHooks
     public const META_TYPE        = '_returns_type';
     public const META_REMEDY      = '_returns_remedy';
 
+    /** Order meta set once a repair request on the order is completed; extends the complaint window. */
+    public const META_ORDER_REPAIRED = '_returns_repaired';
+
     private const STATUS_NONCE = 'returns_save_status';
 
     public function registerHooks(): void
@@ -194,6 +197,26 @@ final class ReturnRequest implements HasHooks
     /**
      * The current workflow status of a request (defaults to "requested").
      */
+    /**
+     * A completed request whose remedy is repair (a Repair request, or a complaint asking for repair)
+     * flags its order, once, so the complaint window gains 12 months.
+     * shortcut: per order rather than per item, a superset of the per-item extension in the directive.
+     */
+    public static function markRepaired(int $postId, string $status): void
+    {
+        $type   = (string) get_post_meta($postId, self::META_TYPE, true);
+        $remedy = (string) get_post_meta($postId, self::META_REMEDY, true);
+        if (Statuses::COMPLETED !== $status || (Types::REPAIR !== $type && Types::REMEDY_REPAIR !== $remedy)) {
+            return;
+        }
+
+        $order = wc_get_order((int) get_post_meta($postId, self::META_ORDER_ID, true));
+        if ($order instanceof \WC_Order && 'yes' !== $order->get_meta(self::META_ORDER_REPAIRED)) {
+            $order->update_meta_data(self::META_ORDER_REPAIRED, 'yes');
+            $order->save();
+        }
+    }
+
     public function status(int $postId): string
     {
         $status = (string) get_post_meta($postId, self::META_STATUS, true);
@@ -507,6 +530,7 @@ final class ReturnRequest implements HasHooks
         }
 
         update_post_meta($postId, self::META_STATUS, $status);
+        self::markRepaired($postId, $status);
 
         /**
          * Fires after a return request's workflow status changes in wp-admin.

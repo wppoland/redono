@@ -191,7 +191,7 @@ final class Settings implements HasHooks
                                     <input type="number" min="0" step="1" id="returns_complaint_window_months" class="small-text"
                                         name="<?php echo esc_attr(Options::OPTION); ?>[complaint_window_months]"
                                         value="<?php echo esc_attr((string) Options::complaintWindowMonths()); ?>" />
-                                    <p class="description"><?php esc_html_e('Applies to Complaint and Repair requests, counted from the order date. A fault can surface long after the return window has closed, and in the EU the legal guarantee runs for at least two years, so this window is separate. Set 0 for no deadline. Ships at 24.', 'redono'); ?></p>
+                                    <p class="description"><?php esc_html_e('Applies to Complaint and Repair requests, counted from the order date. A fault can surface long after the return window has closed, and in the EU the legal guarantee runs for at least two years, so this window is separate. Once a repair request on an order is completed, that order gets 12 more months, once, because repair extends the liability of the seller (Article 10(2a) of Directive (EU) 2019/771). Set 0 for no deadline. Ships at 24.', 'redono'); ?></p>
                                     <p class="returns-example">
                                         <?php
                                         printf(
