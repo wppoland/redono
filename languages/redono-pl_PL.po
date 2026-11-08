@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Returns - RMA and Return Requests for WooCommerce 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/returns\n"
-"POT-Creation-Date: 2026-11-08T15:15:53+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/redono\n"
+"POT-Creation-Date: 2026-11-08T19:16:08+00:00\n"
 "PO-Revision-Date: 2026-06-15 00:00+0000\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -251,16 +251,17 @@ msgstr ""
 
 #: src/Admin/Settings.php:239
 msgid ""
-"Shoplex is active. Comprehensive EU Consumer Rights, Omnibus price tracking, "
-"and legal compliance notices are active across your store."
+"Shoplex is active. Check under WooCommerce > Shoplex which of its modules "
+"(lowest price from the last 30 days, VAT notice, withdrawal information) are "
+"switched on."
 msgstr ""
 
 #. translators: %s: partner plugin name, linked to its search on the Add Plugins screen.
 #: src/Admin/Settings.php:246
 #, php-format
 msgid ""
-"Install %s to ensure full storewide compliance with the EU Consumer Rights "
-"Directive, Omnibus pricing, and VAT display rules."
+"Install %s for modules that show the lowest price from the last 30 days, the "
+"VAT notice and withdrawal information across your store."
 msgstr ""
 
 #: src/Admin/Settings.php:255
