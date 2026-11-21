@@ -76,19 +76,30 @@ final class ReturnPrivacyService implements HasHooks
             $status = Statuses::label($statusKey);
             $type   = Types::label($typeKey);
 
+            $data = [
+                ['name' => __('Request ID', 'redono'), 'value' => (string) $postId],
+                ['name' => __('Order ID', 'redono'), 'value' => (string) $orderId],
+                ['name' => __('Type', 'redono'), 'value' => $type],
+                ['name' => __('Reason', 'redono'), 'value' => $reason],
+                ['name' => __('Customer Note', 'redono'), 'value' => $note],
+                ['name' => __('Status', 'redono'), 'value' => $status],
+                ['name' => __('Date', 'redono'), 'value' => $postDate],
+            ];
+
+            /**
+             * Filters the personal data exported for one request, so an add-on
+             * can export the fields it stores on the request.
+             *
+             * @param list<array{name: string, value: string}> $data   Name/value pairs.
+             * @param int                                      $postId The request post ID.
+             */
+            $data = (array) apply_filters('returns/privacy_export_data', $data, $postId);
+
             $items[] = [
                 'group_id'    => 'returns-requests',
                 'group_label' => __('Return & RMA Requests', 'redono'),
                 'item_id'     => 'returns-rma-' . $postId,
-                'data'        => [
-                    ['name' => __('Request ID', 'redono'), 'value' => (string) $postId],
-                    ['name' => __('Order ID', 'redono'), 'value' => (string) $orderId],
-                    ['name' => __('Type', 'redono'), 'value' => $type],
-                    ['name' => __('Reason', 'redono'), 'value' => $reason],
-                    ['name' => __('Customer Note', 'redono'), 'value' => $note],
-                    ['name' => __('Status', 'redono'), 'value' => $status],
-                    ['name' => __('Date', 'redono'), 'value' => $postDate],
-                ],
+                'data'        => $data,
             ];
         }
 
@@ -112,6 +123,14 @@ final class ReturnPrivacyService implements HasHooks
             update_post_meta($postId, ReturnRequest::META_NOTE, '');
             // The customer also submitted the record, so they are its author.
             wp_update_post(['ID' => $postId, 'post_author' => 0]);
+
+            /**
+             * Fires while one request is anonymised by the personal data eraser,
+             * so an add-on can erase the fields it stores on the request.
+             *
+             * @param int $postId The request post ID.
+             */
+            do_action('returns/privacy_erase', $postId);
             $anonymized++;
         }
 

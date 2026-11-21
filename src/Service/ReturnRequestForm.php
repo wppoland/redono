@@ -324,6 +324,17 @@ final class ReturnRequestForm implements HasHooks
             );
         }
 
+        /**
+         * Filters the validation errors of a submitted request form, so an
+         * add-on can validate the fields it printed on `returns/form_fields`.
+         * The nonce and the order have been checked at this point.
+         *
+         * @param array<string, string> $errors Field key => message. Any entry blocks the request.
+         * @param \WC_Order             $order  The order the request is for.
+         * @param string                $type   The chosen request type.
+         */
+        $this->errors = (array) apply_filters('returns/form_errors', $this->errors, $order, $type);
+
         if ([] !== $this->errors) {
             return;
         }
@@ -331,6 +342,16 @@ final class ReturnRequestForm implements HasHooks
         $postId = $this->requests->create($orderId, '' === $guestToken ? get_current_user_id() : 0, $items, $reason, $note, $type, $remedy);
 
         if ($postId > 0) {
+            /**
+             * Fires after a request submitted through the form is stored, for
+             * fields an add-on validated on `returns/form_errors`.
+             *
+             * @param int       $postId The new request post ID.
+             * @param \WC_Order $order  The order the request is for.
+             * @param string    $type   The request type.
+             */
+            do_action('returns/form_submitted', $postId, $order, $type);
+
             $this->notifyMerchant($postId, $order, $items, $reason, $note, $type, $remedy);
             $this->notifyCustomer($postId, $order, $items, $type);
         }
@@ -688,6 +709,17 @@ final class ReturnRequestForm implements HasHooks
                 <label for="returns-note"><?php esc_html_e('Additional details', 'redono'); ?></label>
                 <textarea id="returns-note" name="returns_note" rows="4"><?php echo esc_textarea($chosenNote); ?></textarea>
             </p>
+
+            <?php
+            /**
+             * Fires before the submit button of the request form, so an add-on
+             * can print extra fields. Validate them on `returns/form_errors`.
+             *
+             * @param \WC_Order             $order  The order the request is for.
+             * @param array<string, string> $errors Current validation errors, keyed by field.
+             */
+            do_action('returns/form_fields', $order, $this->errors);
+            ?>
 
             <p class="returns-form__submit">
                 <button type="submit" name="returns_submit" value="1" class="button alt"><?php esc_html_e('Submit return request', 'redono'); ?></button>
