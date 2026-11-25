@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Redono - Returns and RMA for WooCommerce 1.3.11\n"
+"Project-Id-Version: Redono - Returns and RMA for WooCommerce 1.3.12\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/redono\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-21T20:48:33+00:00\n"
+"POT-Creation-Date: 2026-11-25T14:32:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: redono\n"
@@ -89,154 +89,159 @@ msgstr ""
 msgid "What %s adds"
 msgstr ""
 
-#: src/Admin/Settings.php:66
+#: src/Admin/Settings.php:67
 msgid "Redono: returns and RMA"
 msgstr ""
 
-#: src/Admin/Settings.php:67
+#: src/Admin/Settings.php:68
 msgid "Redono"
 msgstr ""
 
-#: src/Admin/Settings.php:109
-msgid "Let customers request returns from their account"
+#: src/Admin/Settings.php:85
+msgid "Settings"
 msgstr ""
 
-#: src/Admin/Settings.php:111
-msgid "Customers open a return from My Account > Orders: they pick items, a quantity, a reason and an optional note. Each request is emailed to you and saved as a private record you manage here, with a status the customer can follow."
-msgstr ""
-
-#: src/Admin/Settings.php:114
-msgid "View return requests"
-msgstr ""
-
-#: src/Admin/Settings.php:123
-msgid "Availability"
-msgstr ""
-
-#: src/Admin/Settings.php:124
-msgid "The master switch for the whole return flow."
-msgstr ""
-
-#: src/Admin/Settings.php:128
-msgid "Enable returns"
-msgstr ""
-
-#: src/Admin/Settings.php:134
-msgid "Let customers request a return from My Account."
-msgstr ""
-
-#: src/Admin/Settings.php:136
-msgid "On: a \"Request a return\" link appears next to eligible orders, and the request form is reachable. Off: the link and form disappear from the storefront, existing requests stay in your records. Ships on."
-msgstr ""
-
-#: src/Admin/Settings.php:144
-msgid "What can be returned"
-msgstr ""
-
-#: src/Admin/Settings.php:145
-msgid "Decide which orders qualify and for how long. An order must clear both tests before its \"Request a return\" link shows."
-msgstr ""
-
-#: src/Admin/Settings.php:149
-#: src/Admin/Settings.php:152
-msgid "Eligible order statuses"
-msgstr ""
-
-#: src/Admin/Settings.php:163
-msgid "Orders in any other status never show the return link. Most shops pick the statuses that mean \"the customer has the goods\", usually Completed (and Processing if you fulfil before marking complete). Ships with Completed and Processing ticked; if you untick everything, Completed is kept so the feature still works."
-msgstr ""
-
-#: src/Admin/Settings.php:168
-msgid "Return window (days)"
-msgstr ""
-
-#: src/Admin/Settings.php:174
-msgid "Applies to Return requests. Counted from the order date. After it passes, the customer can no longer choose Return for that order. Set 0 to accept returns with no deadline. Ships at 30."
-msgstr ""
-
-#. translators: %s is the date the return window closes.
-#: src/Admin/Settings.php:179
-#, php-format
-msgid "Example: an order placed today can be returned until %s."
-msgstr ""
-
-#: src/Admin/Settings.php:188
-msgid "Complaint and repair window (months)"
-msgstr ""
-
-#: src/Admin/Settings.php:194
-msgid "Applies to Complaint and Repair requests, counted from the order date. A fault can surface long after the return window has closed, and in the EU the legal guarantee runs for at least two years, so this window is separate. Once a repair request on an order is completed, that order gets 12 more months, once, because repair extends the liability of the seller (Article 10(2a) of Directive (EU) 2019/771). Set 0 for no deadline. Ships at 24."
-msgstr ""
-
-#. translators: %s is the date the complaint and repair window closes.
-#: src/Admin/Settings.php:199
-#, php-format
-msgid "Example: an order placed today can receive a complaint or repair request until %s."
-msgstr ""
-
-#: src/Admin/Settings.php:211
-msgid "Ecosystem integrations"
-msgstr ""
-
-#: src/Admin/Settings.php:215
-msgid "Plogins Withdraw"
-msgstr ""
-
-#: src/Admin/Settings.php:219
-msgid "Plogins Withdraw is active. It handles right-of-withdrawal requests with its own form and list, separate from the return requests here."
-msgstr ""
-
-#. translators: %s: partner plugin name, linked to its search on the Add Plugins screen.
-#: src/Admin/Settings.php:226
-#, php-format
-msgid "Install %s to add a right-of-withdrawal button and form next to your returns flow."
-msgstr ""
-
-#: src/Admin/Settings.php:235
-msgid "Shoplex (EU Compliance)"
-msgstr ""
-
-#: src/Admin/Settings.php:239
-msgid "Shoplex is active. Check under WooCommerce > Shoplex which of its modules (lowest price from the last 30 days, VAT notice, withdrawal information) are switched on."
-msgstr ""
-
-#. translators: %s: partner plugin name, linked to its search on the Add Plugins screen.
-#: src/Admin/Settings.php:246
-#, php-format
-msgid "Install %s for modules that show the lowest price from the last 30 days, the VAT notice and withdrawal information across your store."
-msgstr ""
-
-#: src/Admin/Settings.php:255
-msgid "Sizavo (Size Guides)"
-msgstr ""
-
-#: src/Admin/Settings.php:259
-msgid "Sizavo is active. Clear size guides help customers choose the right size and prevent returns before they happen."
-msgstr ""
-
-#. translators: %s: partner plugin name, linked to its search on the Add Plugins screen.
-#: src/Admin/Settings.php:266
-#, php-format
-msgid "Install %s to reduce return rates by displaying interactive size charts and measurement guides on product pages."
-msgstr ""
-
-#: src/Admin/Settings.php:299
-msgid "any time later, no deadline"
-msgstr ""
-
-#: src/Admin/Settings.php:324
-msgid "Processing"
-msgstr ""
-
-#: src/Admin/Settings.php:325
-#: src/Support/Statuses.php:32
-msgid "Completed"
-msgstr ""
-
+#: src/Admin/Settings.php:86
 #: src/PostType/ReturnRequest.php:71
 #: src/PostType/ReturnRequest.php:73
 #: src/PostType/ReturnRequest.php:74
 msgid "Return Requests"
+msgstr ""
+
+#: src/Admin/Settings.php:127
+msgid "Let customers request returns from their account"
+msgstr ""
+
+#: src/Admin/Settings.php:129
+msgid "Customers open a return from My Account > Orders: they pick items, a quantity, a reason and an optional note. Each request is emailed to you and saved as a private record you manage here, with a status the customer can follow."
+msgstr ""
+
+#: src/Admin/Settings.php:132
+msgid "View return requests"
+msgstr ""
+
+#: src/Admin/Settings.php:141
+msgid "Availability"
+msgstr ""
+
+#: src/Admin/Settings.php:142
+msgid "The master switch for the whole return flow."
+msgstr ""
+
+#: src/Admin/Settings.php:146
+msgid "Enable returns"
+msgstr ""
+
+#: src/Admin/Settings.php:152
+msgid "Let customers request a return from My Account."
+msgstr ""
+
+#: src/Admin/Settings.php:154
+msgid "On: a \"Request a return\" link appears next to eligible orders, and the request form is reachable. Off: the link and form disappear from the storefront, existing requests stay in your records. Ships on."
+msgstr ""
+
+#: src/Admin/Settings.php:162
+msgid "What can be returned"
+msgstr ""
+
+#: src/Admin/Settings.php:163
+msgid "Decide which orders qualify and for how long. An order must clear both tests before its \"Request a return\" link shows."
+msgstr ""
+
+#: src/Admin/Settings.php:167
+#: src/Admin/Settings.php:170
+msgid "Eligible order statuses"
+msgstr ""
+
+#: src/Admin/Settings.php:181
+msgid "Orders in any other status never show the return link. Most shops pick the statuses that mean \"the customer has the goods\", usually Completed (and Processing if you fulfil before marking complete). Ships with Completed and Processing ticked; if you untick everything, Completed is kept so the feature still works."
+msgstr ""
+
+#: src/Admin/Settings.php:186
+msgid "Return window (days)"
+msgstr ""
+
+#: src/Admin/Settings.php:192
+msgid "Applies to Return requests. Counted from the order date. After it passes, the customer can no longer choose Return for that order. Set 0 to accept returns with no deadline. Ships at 30."
+msgstr ""
+
+#. translators: %s is the date the return window closes.
+#: src/Admin/Settings.php:197
+#, php-format
+msgid "Example: an order placed today can be returned until %s."
+msgstr ""
+
+#: src/Admin/Settings.php:206
+msgid "Complaint and repair window (months)"
+msgstr ""
+
+#: src/Admin/Settings.php:212
+msgid "Applies to Complaint and Repair requests, counted from the order date. A fault can surface long after the return window has closed, and in the EU the legal guarantee runs for at least two years, so this window is separate. Once a repair request on an order is completed, that order gets 12 more months, once, because repair extends the liability of the seller (Article 10(2a) of Directive (EU) 2019/771). Set 0 for no deadline. Ships at 24."
+msgstr ""
+
+#. translators: %s is the date the complaint and repair window closes.
+#: src/Admin/Settings.php:217
+#, php-format
+msgid "Example: an order placed today can receive a complaint or repair request until %s."
+msgstr ""
+
+#: src/Admin/Settings.php:229
+msgid "Ecosystem integrations"
+msgstr ""
+
+#: src/Admin/Settings.php:233
+msgid "Plogins Withdraw"
+msgstr ""
+
+#: src/Admin/Settings.php:237
+msgid "Plogins Withdraw is active. It handles right-of-withdrawal requests with its own form and list, separate from the return requests here."
+msgstr ""
+
+#. translators: %s: partner plugin name, linked to its search on the Add Plugins screen.
+#: src/Admin/Settings.php:244
+#, php-format
+msgid "Install %s to add a right-of-withdrawal button and form next to your returns flow."
+msgstr ""
+
+#: src/Admin/Settings.php:253
+msgid "Shoplex (EU Compliance)"
+msgstr ""
+
+#: src/Admin/Settings.php:257
+msgid "Shoplex is active. Check under WooCommerce > Shoplex which of its modules (lowest price from the last 30 days, VAT notice, withdrawal information) are switched on."
+msgstr ""
+
+#. translators: %s: partner plugin name, linked to its search on the Add Plugins screen.
+#: src/Admin/Settings.php:264
+#, php-format
+msgid "Install %s for modules that show the lowest price from the last 30 days, the VAT notice and withdrawal information across your store."
+msgstr ""
+
+#: src/Admin/Settings.php:273
+msgid "Sizavo (Size Guides)"
+msgstr ""
+
+#: src/Admin/Settings.php:277
+msgid "Sizavo is active. Clear size guides help customers choose the right size and prevent returns before they happen."
+msgstr ""
+
+#. translators: %s: partner plugin name, linked to its search on the Add Plugins screen.
+#: src/Admin/Settings.php:284
+#, php-format
+msgid "Install %s to reduce return rates by displaying interactive size charts and measurement guides on product pages."
+msgstr ""
+
+#: src/Admin/Settings.php:317
+msgid "any time later, no deadline"
+msgstr ""
+
+#: src/Admin/Settings.php:342
+msgid "Processing"
+msgstr ""
+
+#: src/Admin/Settings.php:343
+#: src/Support/Statuses.php:32
+msgid "Completed"
 msgstr ""
 
 #: src/PostType/ReturnRequest.php:72
