@@ -276,8 +276,9 @@
     letter-spacing: 0.03em;
 }
 
-/* Steps the parcel has already passed: solid path + filled marker. */
-.returns-journey__step.is-done::before {
+/* Steps the parcel has reached, the current one included: solid path + filled marker. */
+.returns-journey__step.is-done::before,
+.returns-journey__step.is-current::before {
     border-top-style: solid;
     border-top-color: var(--returns-accent);
 }
@@ -382,7 +383,8 @@
         border-inline-start: 2px dashed var(--returns-track);
     }
 
-    .returns-journey__step.is-done::before {
+    .returns-journey__step.is-done::before,
+    .returns-journey__step.is-current::before {
         border-inline-start-style: solid;
         border-inline-start-color: var(--returns-accent);
     }
