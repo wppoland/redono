@@ -35,8 +35,8 @@ return [
             'pl' => ['title' => 'Kredyt sklepowy w e-mailu', 'desc' => 'Dołącz kod i kwotę kredytu sklepowego w wiadomości o zakończeniu (wdrożone).'],
         ],
         [
-            'en' => ['title' => 'Return shipping labels', 'desc' => 'Generate return shipping labels for approved requests (shipped).'],
-            'pl' => ['title' => 'Etykiety zwrotnej wysyłki', 'desc' => 'Generuj etykiety zwrotne dla zatwierdzonych zgłoszeń (wdrożone).'],
+            'en' => ['title' => 'Return shipping labels', 'desc' => 'Enter the label URL, carrier and tracking number on the request; the status email passes them to the customer. The plugin does not create labels with a carrier.'],
+            'pl' => ['title' => 'Etykiety zwrotnej wysyłki', 'desc' => 'W zgłoszeniu wpisujesz link do etykiety, przewoźnika i numer przesyłki, a e-mail o statusie przekazuje je klientowi. Wtyczka nie tworzy etykiet u przewoźnika.'],
         ],
         [
             'en' => ['title' => 'Automatic store credit', 'desc' => 'Issue store credit automatically when a return is completed (shipped).'],
@@ -47,8 +47,8 @@ return [
             'pl' => ['title' => 'Analityka powodów', 'desc' => 'Pulpit powodów, trendów i linii produktowych napędzających zwroty (wdrożone).'],
         ],
         [
-            'en' => ['title' => 'Refund actions', 'desc' => 'Process WooCommerce refunds from the return request screen (RefundActions, shipped in 0.6.0).'],
-            'pl' => ['title' => 'Akcje zwrotu środków', 'desc' => 'Przetwarzaj zwroty WooCommerce z ekranu zgłoszenia zwrotu (RefundActions, wdrożone w 0.6.0).'],
+            'en' => ['title' => 'Refund actions', 'desc' => 'Process WooCommerce refunds from the return request screen (RefundActions, shipped in 0.6.0). Since 1.1.0 a request opened from a Withdraw declaration shows its refund deadline, and the shop gets one email reminder before it. For cash-on-delivery and bank-transfer orders the customer can enter a refund bank account (IBAN) on the form, stored encrypted and masked in admin.'],
+            'pl' => ['title' => 'Akcje zwrotu środków', 'desc' => 'Przetwarzaj zwroty WooCommerce z ekranu zgłoszenia zwrotu (RefundActions, wdrożone w 0.6.0). Od 1.1.0 zgłoszenie otwarte z odstąpienia w Withdraw pokazuje termin zwrotu pieniędzy, a sklep dostaje jedno przypomnienie e-mailem przed jego upływem. Przy płatności za pobraniem albo przelewem klient może podać w formularzu numer rachunku (IBAN), zapisywany w postaci zaszyfrowanej i maskowany w panelu.'],
         ],
     ],
 ];
